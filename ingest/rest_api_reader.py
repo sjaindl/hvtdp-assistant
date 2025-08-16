@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from typing import List, Dict, Any, Iterable, Tuple, Union
+from typing import List, Dict, Any, Iterable
 import requests
 from llama_index.core import Document
 import json
@@ -170,7 +170,7 @@ def _summarize_fields(data: Any, exclude_paths: Iterable[str]) -> List[str]:
     cleaned = _remove_excluded(data, exclude_paths)
     samples: Dict[str, List[Any]] = {}
 
-    _BRACKET_INDEX_RE = re.compile(r"\[\d+\]")
+    _BRACKET_INDEX_RE = re.compile(r"\[\d+]")
 
     def _normalize_bracket_indices(key: str) -> str:
         """Turn any numeric bracket index like [0], [12] into [] once."""

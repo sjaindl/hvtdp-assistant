@@ -1,5 +1,3 @@
-import os
-
 from llama_index.core import load_index_from_storage, StorageContext
 from config import OPENAI_API_KEY
 from llama_index.core.settings import Settings
