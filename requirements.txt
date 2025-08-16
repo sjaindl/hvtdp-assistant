@@ -1,0 +1,12 @@
+llama-index
+openai
+sqlalchemy
+python-dotenv
+beautifulsoup4
+pdfplumber
+requests
+
+pandas #~=2.2.3
+llama-index-core #~=0.13.2
+llama-index-readers-smart-pdf-loader
+llama-parse
