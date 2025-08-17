@@ -11,3 +11,4 @@ llama-index-core #~=0.13.2
 llama-index-readers-smart-pdf-loader
 llama-parse
 llama-index-readers-web
+llama-index-tools-playwright

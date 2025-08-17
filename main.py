@@ -2,6 +2,7 @@
 #from ingest.ingest_web import load_web_docs
 #from ingest.ingest_docs import load_local_docs
 #from ingest.ingest_github import load_github_docs
+import asyncio
 import os
 
 from index_builder import build_index
@@ -9,14 +10,17 @@ from index_loader import load_index
 from chat_engine import build_chat_engine
 from ingest.docs_reader import load_local_docs
 from ingest.rest_api_reader import load_api_endpoints, specs
+from ingest.webpage_scraper import load_web_docs
 
 def ingest_all():
     docs = []
     docs += load_local_docs()
     docs += load_api_endpoints(specs)
+    web_docs = asyncio.run(load_web_docs())
+    docs += web_docs
     #docs += load_sql_docs()
-    #docs += load_web_docs()
     #docs += load_github_docs()
+
     return docs
 
 if __name__ == "__main__":
