@@ -20,9 +20,9 @@ def load_csv(path):
 def load_pdf(path):
     parser = PDFReader()
     file_extractor = {".pdf": parser}
-    reader = (SimpleDirectoryReader(
+    reader = SimpleDirectoryReader(
         path, file_extractor=file_extractor
-    ))
+    )
 
     data = reader.load_data()
     return data
