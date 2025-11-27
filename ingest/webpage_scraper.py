@@ -9,6 +9,11 @@ urls: List[str] = [
     "https://www.hvtdpstainz.at/#/entenrennen",
     "https://www.hvtdpstainz.at/#/bocciaturnier",
     "https://www.hvtdpstainz.at/#/contact",
+    "https://www.hvtdpstainz.at/#/championship/2021-2022"
+    "https://www.hvtdpstainz.at/#/championship/2022-2023"
+    "https://www.hvtdpstainz.at/#/championship/2023-2024"
+    "https://www.hvtdpstainz.at/#/championship/2024-2025",
+    "https://www.hvtdpstainz.at/#/championship/2025-2026",
 ]
 
 async def load_web_docs() -> List[Document]:
@@ -36,3 +41,4 @@ async def load_web_docs() -> List[Document]:
         return docs
     finally:
         await browser.close()
+
