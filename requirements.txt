@@ -12,3 +12,16 @@ llama-index-readers-smart-pdf-loader
 llama-parse
 llama-index-readers-web
 llama-index-tools-playwright
+llama-index-llms-ollama
+llama-index-program-openai
+openinference-instrumentation-llama-index
+sentence-transformers
+spacy
+ollama
+deepeval
+
+llama-index-vector-stores-qdrant
+qdrant-client
+llama-index-embeddings-huggingface
+fastembed
+einops
