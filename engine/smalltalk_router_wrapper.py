@@ -27,7 +27,7 @@ class SmalltalkFirstQueryEngine(BaseQueryEngine):
         q = query_bundle.query_str if isinstance(query_bundle, QueryBundle) else str(query_bundle)
         if _is_smalltalk(q):
             msg = (
-                "Hallo Sportsfreund! Ich bin der HV TDP Assistant und beantworte dir gerne alle Fragen rund um den HV TDP Stainz!"
+                "Hallo Sportsfreund! Ich bin der HV TDP Assistant und beantworte dir gerne alle Fragen rund um den HV TDP Stainz! "
                 "Du kannst z. B. fragen: „Wer ist der Tormann?“, „Zeig mir die Tabelle von 2024“, "
                 "oder „Welche Vereinsveranstaltungen gab es 2023?“"
             )
