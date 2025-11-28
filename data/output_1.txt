@@ -1,0 +1,200 @@
+llamaindex default vector DB
+index: HierarchicalNodeParser, chunk_sizes=[800, 1200, 2400]
+summary in text
+build_chat_engine: token_limit = 4000,
+BoostImportant(bonus = 0.25)
+SentenceTransformerRerank: multi, top_n = 12
+VectorIndexRetriever(similarity_top_k = 40, vector_store_query_mode = VectorStoreQueryMode.MMR)
+AutoMergingRetriever: simple_ratio_thresh = 0.5
+synth = get_response_synthesizer(response_mode = ResponseMode.REFINE)
+RetrieverQueryEngine: [reranker, post] + synth
+___________________________
+Plain: False
+Metadata: ('f9b66122-78cd-4a60-b067-fa70a0068482', {'source': 'https://www.hvtdpstainz.at/api/getSquadPlayers.php', 'endpoint_description': 'Übersicht aller Spieler im Meisterschaftskader: Gespielte Position, Beitrittsdatum und Namen', 'record_count': 28, 'important': True})
+Metadata: ('8e19d6f7-03cd-4db9-8e89-11f2294ca334', {'source': 'https://www.hvtdpstainz.at/api/getActivePlayers.php', 'endpoint_description': 'Übersicht der weiteren aktiven Vereinsmitglieder, die nicht mehr im Meisterschaftskader sind: Gespielte Position, Beitrittsdatum und Namen', 'record_count': 16, 'important': True})
+Metadata: ('57ffcdae-2792-49ea-b25e-8a598d050236', {'source': 'https://www.hvtdpstainz.at/api/getNews.php', 'endpoint_description': 'Alle News des HV TDP Stainz. Entweder als plain news oder htmlNews.', 'record_count': 197, 'important': False})
+Metadata: ('d22bfbc9-8597-443c-b21b-e665cac431a4', {'source': 'https://www.hvtdpstainz.at/#/about'})
+Metadata: ('6a20b1c7-7c44-4af2-8992-27f5ae16d58c', {'source': 'https://www.hvtdpstainz.at/api/getSquadPlayers.php', 'endpoint_description': 'Übersicht aller Spieler im Meisterschaftskader: Gespielte Position, Beitrittsdatum und Namen', 'record_count': 28, 'important': True})
+Metadata: ('1f72016b-d094-4d1b-923d-e0fa36f2aeff', {'source': 'https://www.hvtdpstainz.at/api/getItems.php', 'endpoint_description': 'Das Sortiment aus dem Fanshop des HV TDP Stainz', 'record_count': 22, 'important': True})
+Metadata: ('c78271c0-c5e0-489f-9da8-c86e8c853071', {'source': 'https://www.hvtdpstainz.at/api/getPlayerOfTheSeason.php', 'endpoint_description': 'Das Umfrageergebnis der Wahl zum Spieler der Saison 2024 mit genauen Stimmanzahlen', 'record_count': 28, 'important': False})
+Metadata: ('1c51a47a-4282-46d4-9ed3-db8200efed26', {'page_label': '2', 'file_name': 'Jahreshauptversammlung_2020_Protokoll.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/Jahreshauptversammlung_2020_Protokoll.pdf', 'file_type': 'application/pdf', 'file_size': 1318693, 'creation_date': '2021-05-21', 'last_modified_date': '2021-05-20'})
+Metadata: ('b3731d5a-1131-4fef-b680-13467b2605bd', {'page_label': '1', 'file_name': 'Jahreshauptversammlung_2020_Protokoll.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/Jahreshauptversammlung_2020_Protokoll.pdf', 'file_type': 'application/pdf', 'file_size': 1318693, 'creation_date': '2021-05-21', 'last_modified_date': '2021-05-20'})
+Metadata: ('97f66f6e-cd3c-4623-91d5-044aa2548098', {'source': 'https://www.hvtdpstainz.at/#/championship/2024-2025'})
+Metadata: ('0340cc99-739a-45ba-90c3-8a72cc28ebfe', {'source': 'https://www.hvtdpstainz.at/#/contact'})
+Metadata: ('f55c50e8-bd32-4e82-99d2-7731c6efe2e7', {'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/Trainingsbeteiligung_2024.csv', 'file_name': 'Trainingsbeteiligung_2024.csv', 'file_type': 'text/csv', 'file_size': 854, 'creation_date': '2025-08-15', 'last_modified_date': '2025-08-18'})
+Retriever Res: Query: query
+Metrics: {'mrr': 0.0, 'hit_rate': 0.0}
+
+Query: Wer ist im Meisterschaftskader vom HV TDP Stainz?
+Response: Alexander Oswald, Andreas Stelzer, Bernhard Reinisch, Christian Maderthoner, David Fauland, Florian Glaeser, Manfred Paschek, Marc Hendler, Michael Primus, Paul Hendler, Thomas Happernegg
+Faithful: False, score: 0.0
+Relevant: False, score: 0.0
+___________________________
+Plain: False
+Metadata: ('4ec37745-9835-4b86-a15d-8e75d89963b5', {'page_label': '1', 'file_name': 'Jahreshauptversammlung_2020_Protokoll.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/Jahreshauptversammlung_2020_Protokoll.pdf', 'file_type': 'application/pdf', 'file_size': 1318693, 'creation_date': '2021-05-21', 'last_modified_date': '2021-05-20'})
+Metadata: ('58dd7778-e329-43ba-804b-88d33a58bb2e', {'source': 'docs/Trainingsbeteiligung_2024.csv'})
+Metadata: ('f55c50e8-bd32-4e82-99d2-7731c6efe2e7', {'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/Trainingsbeteiligung_2024.csv', 'file_name': 'Trainingsbeteiligung_2024.csv', 'file_type': 'text/csv', 'file_size': 854, 'creation_date': '2025-08-15', 'last_modified_date': '2025-08-18'})
+Metadata: ('d3d2be31-103f-4228-9184-8dbe957502e0', {'source': 'https://www.hvtdpstainz.at/api/getNews.php', 'endpoint_description': 'Alle News des HV TDP Stainz. Entweder als plain news oder htmlNews.', 'record_count': 197, 'important': False})
+Metadata: ('151285f4-cb6d-4b96-aa2b-7d2c7573d1d7', {'page_label': '6', 'file_name': '2024_Jahreshauptversammlung_Protokoll.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/2024_Jahreshauptversammlung_Protokoll.pdf', 'file_type': 'application/pdf', 'file_size': 421350, 'creation_date': '2024-08-21', 'last_modified_date': '2024-08-21'})
+Metadata: ('60f782ba-6c3a-498c-a75b-da910281b232', {'source': 'https://www.hvtdpstainz.at/#/entenrennen'})
+Metadata: ('e014afa1-fe7d-4661-954c-0b17499f29f7', {'source': 'https://www.hvtdpstainz.at/api/getNews.php', 'endpoint_description': 'Alle News des HV TDP Stainz. Entweder als plain news oder htmlNews.', 'record_count': 197, 'important': False})
+Metadata: ('7cb1aa9e-c9da-48a1-91f7-65754bc50a90', {'source': 'https://www.hvtdpstainz.at/api/getNews.php', 'endpoint_description': 'Alle News des HV TDP Stainz. Entweder als plain news oder htmlNews.', 'record_count': 197, 'important': False})
+Metadata: ('a753780f-6e3b-447a-8f6b-290e8ff1ea7f', {'page_label': '2', 'file_name': 'statuten.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/statuten.pdf', 'file_type': 'application/pdf', 'file_size': 535815, 'creation_date': '2025-08-15', 'last_modified_date': '2025-08-15'})
+Metadata: ('7ab0a7d7-2f9b-449e-9392-f09ac64a85ce', {'page_label': '2', 'file_name': 'statuten.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/statuten.pdf', 'file_type': 'application/pdf', 'file_size': 535815, 'creation_date': '2025-08-15', 'last_modified_date': '2025-08-15'})
+Metadata: ('a00863fc-6067-4f1f-999c-58c573511dde', {'page_label': '2', 'file_name': 'Sitzungsprotokoll_2018_01_30.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/Sitzungsprotokoll_2018_01_30.pdf', 'file_type': 'application/pdf', 'file_size': 406049, 'creation_date': '2021-05-20', 'last_modified_date': '2021-05-20'})
+Metadata: ('0340cc99-739a-45ba-90c3-8a72cc28ebfe', {'source': 'https://www.hvtdpstainz.at/#/contact'})
+Retriever Res: Query: query
+Metrics: {'mrr': 0.0, 'hit_rate': 0.0}
+
+Query: Wieviel Trainingsbeteiligung hat Stefan Jaindl?
+Response: Stefan Jaindl hat eine Trainingsbeteiligung von weniger als 50%, da nur 5 Spieler es geschafft haben, mehr als 50% der Trainings zu besuchen.
+Faithful: False, score: 0.0
+Relevant: False, score: 0.0
+___________________________
+Plain: False
+Metadata: ('363d02b8-aad3-4302-8faa-251569b51485', {'source': 'https://www.hvtdpstainz.at/api/getActiveMembership.php', 'endpoint_description': 'Liste an aktiven Vereinsmitgliedern zum Stichtag', 'record_count': 40, 'important': True})
+Metadata: ('8e19d6f7-03cd-4db9-8e89-11f2294ca334', {'source': 'https://www.hvtdpstainz.at/api/getActivePlayers.php', 'endpoint_description': 'Übersicht der weiteren aktiven Vereinsmitglieder, die nicht mehr im Meisterschaftskader sind: Gespielte Position, Beitrittsdatum und Namen', 'record_count': 16, 'important': True})
+Metadata: ('6f9a73af-d82e-4ea0-bc35-89045841057e', {'source': 'https://www.hvtdpstainz.at/api/getActiveMembership.php', 'endpoint_description': 'Liste an aktiven Vereinsmitgliedern zum Stichtag', 'record_count': 40, 'important': True})
+Metadata: ('11db9088-7fd4-48c8-af30-7c32860b3fd2', {'page_label': '3', 'file_name': 'Jahreshauptversammlung_2020_Protokoll.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/Jahreshauptversammlung_2020_Protokoll.pdf', 'file_type': 'application/pdf', 'file_size': 1318693, 'creation_date': '2021-05-21', 'last_modified_date': '2021-05-20'})
+Metadata: ('b032304a-9721-4c6f-8acd-be3585e89bcd', {'page_label': '6', 'file_name': 'Sitzungsprotokoll_2022_07_26_JahresHV.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/Sitzungsprotokoll_2022_07_26_JahresHV.pdf', 'file_type': 'application/pdf', 'file_size': 479182, 'creation_date': '2022-07-27', 'last_modified_date': '2022-07-27'})
+Metadata: ('d22bfbc9-8597-443c-b21b-e665cac431a4', {'source': 'https://www.hvtdpstainz.at/#/about'})
+Metadata: ('15a12fbb-b34f-4477-93bf-ac7342ae53d1', {'page_label': '1', 'file_name': 'Sitzungsprotokoll_2018_01_30.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/Sitzungsprotokoll_2018_01_30.pdf', 'file_type': 'application/pdf', 'file_size': 406049, 'creation_date': '2021-05-20', 'last_modified_date': '2021-05-20'})
+Metadata: ('1c51a47a-4282-46d4-9ed3-db8200efed26', {'page_label': '2', 'file_name': 'Jahreshauptversammlung_2020_Protokoll.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/Jahreshauptversammlung_2020_Protokoll.pdf', 'file_type': 'application/pdf', 'file_size': 1318693, 'creation_date': '2021-05-21', 'last_modified_date': '2021-05-20'})
+Metadata: ('f9b66122-78cd-4a60-b067-fa70a0068482', {'source': 'https://www.hvtdpstainz.at/api/getSquadPlayers.php', 'endpoint_description': 'Übersicht aller Spieler im Meisterschaftskader: Gespielte Position, Beitrittsdatum und Namen', 'record_count': 28, 'important': True})
+Metadata: ('7ab0a7d7-2f9b-449e-9392-f09ac64a85ce', {'page_label': '2', 'file_name': 'statuten.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/statuten.pdf', 'file_type': 'application/pdf', 'file_size': 535815, 'creation_date': '2025-08-15', 'last_modified_date': '2025-08-15'})
+Metadata: ('a753780f-6e3b-447a-8f6b-290e8ff1ea7f', {'page_label': '2', 'file_name': 'statuten.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/statuten.pdf', 'file_type': 'application/pdf', 'file_size': 535815, 'creation_date': '2025-08-15', 'last_modified_date': '2025-08-15'})
+Metadata: ('fd1acf03-0de3-4371-adae-a8dae23b4c41', {'source': 'https://www.hvtdpstainz.at/api/getNews.php', 'endpoint_description': 'Alle News des HV TDP Stainz. Entweder als plain news oder htmlNews.', 'record_count': 197, 'important': False})
+Retriever Res: Query: query
+Metrics: {'mrr': 0.0, 'hit_rate': 0.0}
+
+Query: Welche aktiven Mitglieder hat der HV TDP?
+Response: Marc Hendler, Paul Hendler, Nico Reinbacher, Niklas Lesky, Eduard Orthaber, Manfred Paschek, Thomas Happernegg, Michael Primus, Florian Puchleitner
+Faithful: False, score: 0.0
+Relevant: True, score: 1.0
+___________________________
+Plain: False
+Metadata: ('f9b66122-78cd-4a60-b067-fa70a0068482', {'source': 'https://www.hvtdpstainz.at/api/getSquadPlayers.php', 'endpoint_description': 'Übersicht aller Spieler im Meisterschaftskader: Gespielte Position, Beitrittsdatum und Namen', 'record_count': 28, 'important': True})
+Metadata: ('8e19d6f7-03cd-4db9-8e89-11f2294ca334', {'source': 'https://www.hvtdpstainz.at/api/getActivePlayers.php', 'endpoint_description': 'Übersicht der weiteren aktiven Vereinsmitglieder, die nicht mehr im Meisterschaftskader sind: Gespielte Position, Beitrittsdatum und Namen', 'record_count': 16, 'important': True})
+Metadata: ('5b17d9f1-aec0-4230-923b-a595109d99f2', {'source': 'https://www.hvtdpstainz.at/api/getScorers.php', 'endpoint_description': 'Zusammengefasste Liste mit Summe der Tore pro Spieler und Saison', 'record_count': 57, 'important': True})
+Metadata: ('8ba1a7cc-c83d-4f12-9228-0db474a5eb65', {'source': 'https://www.hvtdpstainz.at/api/getScorers.php', 'endpoint_description': 'Zusammengefasste Liste mit Summe der Tore pro Spieler und Saison', 'record_count': 57, 'important': True})
+Metadata: ('58dd7778-e329-43ba-804b-88d33a58bb2e', {'source': 'docs/Trainingsbeteiligung_2024.csv'})
+Metadata: ('cc7ab57f-738d-41c7-852f-28a55a01e64a', {'source': 'https://www.hvtdpstainz.at/api/getNews.php', 'endpoint_description': 'Alle News des HV TDP Stainz. Entweder als plain news oder htmlNews.', 'record_count': 197, 'important': False})
+Metadata: ('f55c50e8-bd32-4e82-99d2-7731c6efe2e7', {'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/Trainingsbeteiligung_2024.csv', 'file_name': 'Trainingsbeteiligung_2024.csv', 'file_type': 'text/csv', 'file_size': 854, 'creation_date': '2025-08-15', 'last_modified_date': '2025-08-18'})
+Metadata: ('62fcd035-2347-4178-b7bc-641091188baa', {'source': 'https://www.hvtdpstainz.at/api/getNews.php', 'endpoint_description': 'Alle News des HV TDP Stainz. Entweder als plain news oder htmlNews.', 'record_count': 197, 'important': False})
+Metadata: ('ea1c02dc-570b-4cbb-9f5a-e2ee3554c21c', {'source': 'https://www.hvtdpstainz.at/api/getNews.php', 'endpoint_description': 'Alle News des HV TDP Stainz. Entweder als plain news oder htmlNews.', 'record_count': 197, 'important': False})
+Metadata: ('636ee52c-80c5-4059-9610-6a2eec9e629e', {'source': 'https://www.hvtdpstainz.at/api/getNews.php', 'endpoint_description': 'Alle News des HV TDP Stainz. Entweder als plain news oder htmlNews.', 'record_count': 197, 'important': False})
+Metadata: ('27c00dd2-4d6e-40bc-9ee7-857fad9b5755', {'source': 'https://www.hvtdpstainz.at/api/getNews.php', 'endpoint_description': 'Alle News des HV TDP Stainz. Entweder als plain news oder htmlNews.', 'record_count': 197, 'important': False})
+Metadata: ('4ec37745-9835-4b86-a15d-8e75d89963b5', {'page_label': '1', 'file_name': 'Jahreshauptversammlung_2020_Protokoll.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/Jahreshauptversammlung_2020_Protokoll.pdf', 'file_type': 'application/pdf', 'file_size': 1318693, 'creation_date': '2021-05-21', 'last_modified_date': '2021-05-20'})
+Retriever Res: Query: query
+Metrics: {'mrr': 0.0, 'hit_rate': 0.0}
+
+Query: Wer spielt alles als Verteidiger?
+Response: David Seidl, Hrvoje Sincek, Patrick Gödl, Robert Ronegg, Stefan Jaindl.
+Faithful: False, score: 0.0
+Relevant: False, score: 0.0
+___________________________
+Plain: False
+Metadata: ('05f25fed-1c05-4b1d-a82c-d2ed69b6bfcf', {'source': 'https://www.hvtdpstainz.at/api/getDonations.php', 'endpoint_description': 'Übersicht der Matchballspenden an den Verein inkl. Spender, das gesponserte Spiel und Datum', 'record_count': 41, 'important': True})
+Metadata: ('43076232-2811-42da-903e-eb7551885295', {'source': 'https://www.hvtdpstainz.at/api/getDonations.php', 'endpoint_description': 'Übersicht der Matchballspenden an den Verein inkl. Spender, das gesponserte Spiel und Datum', 'record_count': 41, 'important': True})
+Metadata: ('29e57d78-15ee-4877-a965-871531c8a23d', {'source': 'https://www.hvtdpstainz.at/api/getDonations.php', 'endpoint_description': 'Übersicht der Matchballspenden an den Verein inkl. Spender, das gesponserte Spiel und Datum', 'record_count': 41, 'important': True})
+Metadata: ('449c7329-b4dc-4719-9ff1-b7c20bfcd27a', {'source': 'https://www.hvtdpstainz.at/api/getDonations.php', 'endpoint_description': 'Übersicht der Matchballspenden an den Verein inkl. Spender, das gesponserte Spiel und Datum', 'record_count': 41, 'important': True})
+Metadata: ('f0cb9cc2-7799-4540-b2a0-4a19e6e674d6', {'source': 'https://www.hvtdpstainz.at/api/getDonations.php', 'endpoint_description': 'Übersicht der Matchballspenden an den Verein inkl. Spender, das gesponserte Spiel und Datum', 'record_count': 41, 'important': True})
+Metadata: ('80a0f935-f4dd-4e34-a177-99e18c462087', {'source': 'https://www.hvtdpstainz.at/api/getDonations.php', 'endpoint_description': 'Übersicht der Matchballspenden an den Verein inkl. Spender, das gesponserte Spiel und Datum', 'record_count': 41, 'important': True})
+Metadata: ('50d3b61f-416c-4571-bd1c-757e8d8080c1', {'source': 'https://www.hvtdpstainz.at/api/getDonations.php', 'endpoint_description': 'Übersicht der Matchballspenden an den Verein inkl. Spender, das gesponserte Spiel und Datum', 'record_count': 41, 'important': True})
+Metadata: ('89cc85a7-c861-4f79-8931-e9bdd78092d3', {'source': 'https://www.hvtdpstainz.at/api/getDonations.php', 'endpoint_description': 'Übersicht der Matchballspenden an den Verein inkl. Spender, das gesponserte Spiel und Datum', 'record_count': 41, 'important': True})
+Metadata: ('cc37096b-a31d-45bf-ae7b-4542dfd38168', {'page_label': '2', 'file_name': 'Jahreshauptversammlung_2020_Protokoll.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/Jahreshauptversammlung_2020_Protokoll.pdf', 'file_type': 'application/pdf', 'file_size': 1318693, 'creation_date': '2021-05-21', 'last_modified_date': '2021-05-20'})
+Metadata: ('a753780f-6e3b-447a-8f6b-290e8ff1ea7f', {'page_label': '2', 'file_name': 'statuten.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/statuten.pdf', 'file_type': 'application/pdf', 'file_size': 535815, 'creation_date': '2025-08-15', 'last_modified_date': '2025-08-15'})
+Metadata: ('4db94143-c249-4923-810a-97302a25568d', {'page_label': '5', 'file_name': 'statuten.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/statuten.pdf', 'file_type': 'application/pdf', 'file_size': 535815, 'creation_date': '2025-08-15', 'last_modified_date': '2025-08-15'})
+Metadata: ('b0b61e26-273a-476a-b525-a6e235aae287', {'page_label': '4', 'file_name': 'statuten.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/statuten.pdf', 'file_type': 'application/pdf', 'file_size': 535815, 'creation_date': '2025-08-15', 'last_modified_date': '2025-08-15'})
+Retriever Res: Query: query
+Metrics: {'mrr': 0.0, 'hit_rate': 0.0}
+
+Query: Wieviele Matchballspenden an den Verein und von wem hat es gegeben?
+Response: There were a total of 5 Matchball donations to the club. The donors were Sägewerk Maderthoner, Rechtsanwalt Reiterer, Toyota Hecher, Buschenschank Lazarus, and David Fauland.
+Faithful: False, score: 0.0
+Relevant: False, score: 0.0
+___________________________
+Plain: False
+Metadata: ('c6a19601-44bd-493d-8677-986acd9b6a6f', {'source': 'https://www.hvtdpstainz.at/api/getPhotos.php', 'endpoint_description': 'Übersicht der Vereinsveranstaltungen mit Saison und Datum', 'record_count': 48, 'important': True})
+Metadata: ('76c2a0b5-8445-4a34-a912-0c11f081b101', {'source': 'https://www.hvtdpstainz.at/api/getPhotos.php', 'endpoint_description': 'Übersicht der Vereinsveranstaltungen mit Saison und Datum', 'record_count': 48, 'important': True})
+Metadata: ('8e19d6f7-03cd-4db9-8e89-11f2294ca334', {'source': 'https://www.hvtdpstainz.at/api/getActivePlayers.php', 'endpoint_description': 'Übersicht der weiteren aktiven Vereinsmitglieder, die nicht mehr im Meisterschaftskader sind: Gespielte Position, Beitrittsdatum und Namen', 'record_count': 16, 'important': True})
+Metadata: ('fb13e979-f82a-459b-8682-1af16cd393aa', {'page_label': '3', 'file_name': 'Jahreshauptversammlung_2020_Protokoll.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/Jahreshauptversammlung_2020_Protokoll.pdf', 'file_type': 'application/pdf', 'file_size': 1318693, 'creation_date': '2021-05-21', 'last_modified_date': '2021-05-20'})
+Metadata: ('7ab0a7d7-2f9b-449e-9392-f09ac64a85ce', {'page_label': '2', 'file_name': 'statuten.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/statuten.pdf', 'file_type': 'application/pdf', 'file_size': 535815, 'creation_date': '2025-08-15', 'last_modified_date': '2025-08-15'})
+Metadata: ('4d157a77-56b8-4687-805e-5900c3d5622a', {'page_label': '1', 'file_name': 'statuten.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/statuten.pdf', 'file_type': 'application/pdf', 'file_size': 535815, 'creation_date': '2025-08-15', 'last_modified_date': '2025-08-15'})
+Metadata: ('cc37096b-a31d-45bf-ae7b-4542dfd38168', {'page_label': '2', 'file_name': 'Jahreshauptversammlung_2020_Protokoll.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/Jahreshauptversammlung_2020_Protokoll.pdf', 'file_type': 'application/pdf', 'file_size': 1318693, 'creation_date': '2021-05-21', 'last_modified_date': '2021-05-20'})
+Metadata: ('a753780f-6e3b-447a-8f6b-290e8ff1ea7f', {'page_label': '2', 'file_name': 'statuten.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/statuten.pdf', 'file_type': 'application/pdf', 'file_size': 535815, 'creation_date': '2025-08-15', 'last_modified_date': '2025-08-15'})
+Metadata: ('06f9196d-472d-44d5-8ac5-2ca3e54806a7', {'source': 'https://www.hvtdpstainz.at/api/getNews.php', 'endpoint_description': 'Alle News des HV TDP Stainz. Entweder als plain news oder htmlNews.', 'record_count': 197, 'important': False})
+Metadata: ('4ec37745-9835-4b86-a15d-8e75d89963b5', {'page_label': '1', 'file_name': 'Jahreshauptversammlung_2020_Protokoll.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/Jahreshauptversammlung_2020_Protokoll.pdf', 'file_type': 'application/pdf', 'file_size': 1318693, 'creation_date': '2021-05-21', 'last_modified_date': '2021-05-20'})
+Metadata: ('b0b61e26-273a-476a-b525-a6e235aae287', {'page_label': '4', 'file_name': 'statuten.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/statuten.pdf', 'file_type': 'application/pdf', 'file_size': 535815, 'creation_date': '2025-08-15', 'last_modified_date': '2025-08-15'})
+Metadata: ('60f782ba-6c3a-498c-a75b-da910281b232', {'source': 'https://www.hvtdpstainz.at/#/entenrennen'})
+Retriever Res: Query: query
+Metrics: {'mrr': 0.0, 'hit_rate': 0.0}
+
+Query: Welche Vereinsveranstaltungen hat es gegeben?
+Response: There were events like the summer festival for the 5th anniversary of the club, a small field tournament (with the JVP Stainz), a dodgeball tournament at the NMS Stainz, an indoor tournament (with SC Stainz), and a mulled wine stand.
+Faithful: True, score: 1.0
+Relevant: False, score: 0.0
+___________________________
+Plain: False
+Metadata: ('a6eb9421-38b2-4046-bbb5-b9dee982800c', {'source': 'https://www.hvtdpstainz.at/api/getGames.php', 'endpoint_description': 'Übersicht aller Spiele des HV TDP pro Saison inkl. Torschützen', 'record_count': 55, 'important': True})
+Metadata: ('60f782ba-6c3a-498c-a75b-da910281b232', {'source': 'https://www.hvtdpstainz.at/#/entenrennen'})
+Metadata: ('d430faac-433e-4727-b054-9befafd9543f', {'page_label': '4', 'file_name': '2024_Jahreshauptversammlung_Protokoll.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/2024_Jahreshauptversammlung_Protokoll.pdf', 'file_type': 'application/pdf', 'file_size': 421350, 'creation_date': '2024-08-21', 'last_modified_date': '2024-08-21'})
+Metadata: ('e901d6cc-d0c4-4526-b7dd-daaaff65c31c', {'page_label': '4', 'file_name': 'Sitzungsprotokoll_2024_08_21_JahresHV.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/Sitzungsprotokoll_2024_08_21_JahresHV.pdf', 'file_type': 'application/pdf', 'file_size': 421350, 'creation_date': '2024-08-21', 'last_modified_date': '2024-08-21'})
+Metadata: ('bb68b142-b50c-4433-8a2a-11136930879f', {'source': 'https://www.hvtdpstainz.at/api/getNews.php', 'endpoint_description': 'Alle News des HV TDP Stainz. Entweder als plain news oder htmlNews.', 'record_count': 197, 'important': False})
+Metadata: ('7d43e3a2-99ed-4ee6-b19e-a0fe1987b860', {'source': 'https://www.hvtdpstainz.at/api/getNews.php', 'endpoint_description': 'Alle News des HV TDP Stainz. Entweder als plain news oder htmlNews.', 'record_count': 197, 'important': False})
+Metadata: ('51093555-f5f1-461f-b2d9-c6b70b468317', {'source': 'https://www.hvtdpstainz.at/api/getNews.php', 'endpoint_description': 'Alle News des HV TDP Stainz. Entweder als plain news oder htmlNews.', 'record_count': 197, 'important': False})
+Metadata: ('9c7b50d6-7274-4a6c-a671-79eee6aea84f', {'page_label': '3', 'file_name': '2023_Anleitung Starting Eleven.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/2023_Anleitung Starting Eleven.pdf', 'file_type': 'application/pdf', 'file_size': 1252151, 'creation_date': '2025-08-15', 'last_modified_date': '2025-08-15'})
+Metadata: ('4db94143-c249-4923-810a-97302a25568d', {'page_label': '5', 'file_name': 'statuten.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/statuten.pdf', 'file_type': 'application/pdf', 'file_size': 535815, 'creation_date': '2025-08-15', 'last_modified_date': '2025-08-15'})
+Metadata: ('3ec6e47c-34eb-4b0c-9312-52b365db35fb', {'source': 'https://www.hvtdpstainz.at/api/getNews.php', 'endpoint_description': 'Alle News des HV TDP Stainz. Entweder als plain news oder htmlNews.', 'record_count': 197, 'important': False})
+Metadata: ('a753780f-6e3b-447a-8f6b-290e8ff1ea7f', {'page_label': '2', 'file_name': 'statuten.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/statuten.pdf', 'file_type': 'application/pdf', 'file_size': 535815, 'creation_date': '2025-08-15', 'last_modified_date': '2025-08-15'})
+Metadata: ('0838173c-d443-47a8-a199-84467e1f9e18', {'source': 'https://www.hvtdpstainz.at/api/getPappfans.php', 'endpoint_description': 'Zur Zeit von COVID waren keine Fans im Stadion erlaubt, aber es war möglich Pappfiguren zu erwerben und als Fans auf der Tribüne zu platzieren. Hier ist die Liste der Käufer der Pappfans.', 'record_count': 28, 'important': False})
+Retriever Res: Query: query
+Metrics: {'mrr': 0.0, 'hit_rate': 0.0}
+
+Query: Wieviel kosten 12 Entenlose?
+Response: 12 Entenlose kosten 36 Euro.
+Faithful: True, score: 1.0
+Relevant: False, score: 0.0
+___________________________
+Plain: False
+Metadata: ('0340cc99-739a-45ba-90c3-8a72cc28ebfe', {'source': 'https://www.hvtdpstainz.at/#/contact'})
+Metadata: ('1f72016b-d094-4d1b-923d-e0fa36f2aeff', {'source': 'https://www.hvtdpstainz.at/api/getItems.php', 'endpoint_description': 'Das Sortiment aus dem Fanshop des HV TDP Stainz', 'record_count': 22, 'important': True})
+Metadata: ('2a51fe84-2a98-4bd6-9db5-688d205f870a', {'source': 'https://www.hvtdpstainz.at/api/getItems.php', 'endpoint_description': 'Das Sortiment aus dem Fanshop des HV TDP Stainz', 'record_count': 22, 'important': True})
+Metadata: ('0c06a8d8-ccc5-42bf-b705-79249834358b', {'page_label': '2', 'file_name': '2023_Anleitung Starting Eleven.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/2023_Anleitung Starting Eleven.pdf', 'file_type': 'application/pdf', 'file_size': 1252151, 'creation_date': '2025-08-15', 'last_modified_date': '2025-08-15'})
+Metadata: ('5c0e8e9e-7086-4b0f-b9be-6e863749fdc0', {'page_label': '1', 'file_name': 'Anleitung_onlineSchnapsturnier.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/Anleitung_onlineSchnapsturnier.pdf', 'file_type': 'application/pdf', 'file_size': 501612, 'creation_date': '2025-08-15', 'last_modified_date': '2025-08-15'})
+Metadata: ('9e58d3b2-e5ce-40ec-ac71-6a6926d15bec', {'source': 'https://www.hvtdpstainz.at/api/getNews.php', 'endpoint_description': 'Alle News des HV TDP Stainz. Entweder als plain news oder htmlNews.', 'record_count': 197, 'important': False})
+Metadata: ('044d21e0-cd5c-4501-9d9d-4e5a7480c641', {'source': 'https://www.hvtdpstainz.at/api/getNews.php', 'endpoint_description': 'Alle News des HV TDP Stainz. Entweder als plain news oder htmlNews.', 'record_count': 197, 'important': False})
+Metadata: ('a753780f-6e3b-447a-8f6b-290e8ff1ea7f', {'page_label': '2', 'file_name': 'statuten.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/statuten.pdf', 'file_type': 'application/pdf', 'file_size': 535815, 'creation_date': '2025-08-15', 'last_modified_date': '2025-08-15'})
+Metadata: ('27325923-4c32-463d-92dd-656092cea8e7', {'page_label': '1', 'file_name': 'Sitzungsprotokoll_2023_02_24-10_Jahresfeier.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/Sitzungsprotokoll_2023_02_24-10_Jahresfeier.pdf', 'file_type': 'application/pdf', 'file_size': 338352, 'creation_date': '2023-02-24', 'last_modified_date': '2023-02-24'})
+Metadata: ('7c97c38a-31f2-4ffc-87e4-6c40bae169b4', {'source': 'https://www.hvtdpstainz.at/api/getNews.php', 'endpoint_description': 'Alle News des HV TDP Stainz. Entweder als plain news oder htmlNews.', 'record_count': 197, 'important': False})
+Metadata: ('6594fa49-b256-4fa9-bf6c-0820a086d81c', {'page_label': '1', 'file_name': 'beitrittserklaerung.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/beitrittserklaerung.pdf', 'file_type': 'application/pdf', 'file_size': 383651, 'creation_date': '2025-08-16', 'last_modified_date': '2025-08-16'})
+Metadata: ('2f750268-e9e7-4ba7-b454-f2362734bace', {'source': 'https://www.hvtdpstainz.at/api/getNews.php', 'endpoint_description': 'Alle News des HV TDP Stainz. Entweder als plain news oder htmlNews.', 'record_count': 197, 'important': False})
+Retriever Res: Query: query
+Metrics: {'mrr': 0.0, 'hit_rate': 0.0}
+
+Query: Wie kann ich den HV TDP kontaktieren?
+Response: You can reach out to HV TDP Stainz by completing the contact form available on their website.
+Faithful: True, score: 1.0
+Relevant: False, score: 0.0
+___________________________
+Plain: False
+Metadata: ('dd991559-ea7d-4308-8a18-5f398c91c7e9', {'source': 'https://www.hvtdpstainz.at/api/getItems.php', 'endpoint_description': 'Das Sortiment aus dem Fanshop des HV TDP Stainz', 'record_count': 22, 'important': True})
+Metadata: ('2a51fe84-2a98-4bd6-9db5-688d205f870a', {'source': 'https://www.hvtdpstainz.at/api/getItems.php', 'endpoint_description': 'Das Sortiment aus dem Fanshop des HV TDP Stainz', 'record_count': 22, 'important': True})
+Metadata: ('1f72016b-d094-4d1b-923d-e0fa36f2aeff', {'source': 'https://www.hvtdpstainz.at/api/getItems.php', 'endpoint_description': 'Das Sortiment aus dem Fanshop des HV TDP Stainz', 'record_count': 22, 'important': True})
+Metadata: ('7a97718e-ea1d-4927-8a5e-b6e4b399f3aa', {'source': 'https://www.hvtdpstainz.at/api/getItems.php', 'endpoint_description': 'Das Sortiment aus dem Fanshop des HV TDP Stainz', 'record_count': 22, 'important': True})
+Metadata: ('6f9a73af-d82e-4ea0-bc35-89045841057e', {'source': 'https://www.hvtdpstainz.at/api/getActiveMembership.php', 'endpoint_description': 'Liste an aktiven Vereinsmitgliedern zum Stichtag', 'record_count': 40, 'important': True})
+Metadata: ('60f782ba-6c3a-498c-a75b-da910281b232', {'source': 'https://www.hvtdpstainz.at/#/entenrennen'})
+Metadata: ('1c51a47a-4282-46d4-9ed3-db8200efed26', {'page_label': '2', 'file_name': 'Jahreshauptversammlung_2020_Protokoll.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/Jahreshauptversammlung_2020_Protokoll.pdf', 'file_type': 'application/pdf', 'file_size': 1318693, 'creation_date': '2021-05-21', 'last_modified_date': '2021-05-20'})
+Metadata: ('11db9088-7fd4-48c8-af30-7c32860b3fd2', {'page_label': '3', 'file_name': 'Jahreshauptversammlung_2020_Protokoll.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/Jahreshauptversammlung_2020_Protokoll.pdf', 'file_type': 'application/pdf', 'file_size': 1318693, 'creation_date': '2021-05-21', 'last_modified_date': '2021-05-20'})
+Metadata: ('cc37096b-a31d-45bf-ae7b-4542dfd38168', {'page_label': '2', 'file_name': 'Jahreshauptversammlung_2020_Protokoll.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/Jahreshauptversammlung_2020_Protokoll.pdf', 'file_type': 'application/pdf', 'file_size': 1318693, 'creation_date': '2021-05-21', 'last_modified_date': '2021-05-20'})
+Metadata: ('0838173c-d443-47a8-a199-84467e1f9e18', {'source': 'https://www.hvtdpstainz.at/api/getPappfans.php', 'endpoint_description': 'Zur Zeit von COVID waren keine Fans im Stadion erlaubt, aber es war möglich Pappfiguren zu erwerben und als Fans auf der Tribüne zu platzieren. Hier ist die Liste der Käufer der Pappfans.', 'record_count': 28, 'important': False})
+Metadata: ('b0b61e26-273a-476a-b525-a6e235aae287', {'page_label': '4', 'file_name': 'statuten.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/statuten.pdf', 'file_type': 'application/pdf', 'file_size': 535815, 'creation_date': '2025-08-15', 'last_modified_date': '2025-08-15'})
+Metadata: ('9c7b50d6-7274-4a6c-a671-79eee6aea84f', {'page_label': '3', 'file_name': '2023_Anleitung Starting Eleven.pdf', 'file_path': '/Users/stefanjaindl/Code/hvtdp-assistant/docs/2023_Anleitung Starting Eleven.pdf', 'file_type': 'application/pdf', 'file_size': 1252151, 'creation_date': '2025-08-15', 'last_modified_date': '2025-08-15'})
+Retriever Res: Query: query
+Metrics: {'mrr': 0.0, 'hit_rate': 0.0}
+
+Query: Stell mir eine Kollektion aus dem Fanshop des HV TDP für maximal € 100.- zusammen
+Response: Eine Kollektion aus dem Fanshop des HV TDP Stainz für maximal € 100.- könnte bestehen aus dem Fanschal (14,90 €), der HV TDP Vereinssocken (9,90 €), und der Weihnachtsmütze (5,00 €). Dies würde insgesamt 29,80 € kosten und somit unter dem Budget von € 100.- bleiben.
+Faithful: False, score: 0.0
+Relevant: True, score: 1.0
+___________________________

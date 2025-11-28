@@ -1,0 +1,102 @@
+Plain: True
+Metadata: {'45c1b854-5391-4881-96fc-15acf32dc372': {'source': 'https://www.hvtdpstainz.at/#/championship/2024-2025'}}
+Retriever Res: Query: query
+Metrics: {'mrr': 0.0, 'hit_rate': 0.0}
+
+Query: Wer ist im Meisterschaftskader vom HV TDP Stainz?
+Response: Der Meisterschaftskader vom HV TDP Stainz besteht aus den Spielern, die in den genannten Spielen aufgeführt sind, darunter Torschützen und Spieler, die in den Testspielen und offiziellen Spielen der Meisterschaft eingesetzt wurden.
+Faithful: True, score: 1.0
+Relevant: False, score: 0.0
+___________________________
+Plain: True
+Metadata: {'56c6729a-ac49-438d-a810-ba1a1649ffbd': {}}
+Retriever Res: Query: query
+Metrics: {'mrr': 0.0, 'hit_rate': 0.0}
+
+Query: Wieviel Trainingsbeteiligung hat Stefan Jaindl?
+Response: Stefan Jaindl hat eine Trainingsbeteiligung von 60.53%.
+Faithful: True, score: 1.0
+Relevant: True, score: 1.0
+___________________________
+Plain: True
+Metadata: {'96431c0a-d22e-46af-850e-52a5af3a81c7': {'source': 'https://www.hvtdpstainz.at/#/about'}}
+Retriever Res: Query: query
+Metrics: {'mrr': 0.0, 'hit_rate': 0.0}
+
+Query: Welche aktiven Mitglieder hat der HV TDP?
+Response: Fabian, Seidl, Bohacek, Ronegg
+Faithful: True, score: 1.0
+Relevant: True, score: 1.0
+___________________________
+Plain: True
+Metadata: {'c33f1013-93b5-44d3-9a95-b55c85d8560a': {'source': 'https://www.hvtdpstainz.at/api/getNews.php', 'endpoint_description': 'Alle News des HV TDP Stainz. Entweder als plain news oder htmlNews.', 'record_count': 197, 'important': False}}
+Retriever Res: Query: query
+Metrics: {'mrr': 0.0, 'hit_rate': 0.0}
+
+Query: Wer spielt alles als Verteidiger?
+Response: Paul Hendler, Daniel Fabian, Robert Ronegg, David Fauland
+Faithful: True, score: 1.0
+Relevant: True, score: 1.0
+___________________________
+Plain: True
+Metadata: {'827c2aa4-48e0-46a2-b139-0816f7d2b0b1': {'source': 'https://www.hvtdpstainz.at/api/getDonations.php', 'endpoint_description': 'Übersicht der Matchballspenden an den Verein inkl. Spender, das gesponserte Spiel und Datum', 'record_count': 41, 'important': True}}
+Retriever Res: Query: query
+Metrics: {'mrr': 0.0, 'hit_rate': 0.0}
+
+Query: Wieviele Matchballspenden an den Verein und von wem hat es gegeben?
+Response: Es gab insgesamt vier Matchballspenden an den Verein. Die Spender waren Erik Hilberger, Secura Versicherungsmakler Team Hiden & Partner, HandyShop Stainz und Kovács Dávid.
+Faithful: True, score: 1.0
+Relevant: True, score: 1.0
+___________________________
+Plain: True
+Metadata: {'f2d769e3-55fa-4cef-9df6-05c545fb103b': {'source': 'https://www.hvtdpstainz.at/api/getNews.php', 'endpoint_description': 'Alle News des HV TDP Stainz. Entweder als plain news oder htmlNews.', 'record_count': 197, 'important': False}}
+Retriever Res: Query: query
+Metrics: {'mrr': 0.0, 'hit_rate': 0.0}
+
+Query: Welche Vereinsveranstaltungen hat es gegeben?
+Response: Es gab ein Fußballturnier, an dem Mannschaften wie "FC Haudaneben", "SV Wacker Durchsaufen", "FC Saufhampton", "HV TDP Stainz II", "FC Hummels", "FC NoName", "FC 0,165er", "Holzbau-Shop Wimmer", "Südsteirer Allstars", "PK Holzbau", "FC Hollywood", "Die Spiegeleiers", "Weinhof Feibel Bad Gams", "UFC Youngsters", "1. FC Schöberl", "Die Schulhofkicker", "FC Bosna Graz", "Schucco's Jungs" und "Bolzplatzjungs" teilgenommen haben.
+Faithful: True, score: 1.0
+Relevant: True, score: 1.0
+___________________________
+Plain: True
+Metadata: {'4253eb20-841d-4314-8575-b4a1b8daf723': {'source': 'https://www.hvtdpstainz.at/#/entenrennen'}}
+Retriever Res: Query: query
+Metrics: {'mrr': 0.0, 'hit_rate': 0.0}
+
+Query: Wieviel kosten 12 Entenlose?
+Response: 36 Euro
+Faithful: False, score: 0.0
+Relevant: False, score: 0.0
+___________________________
+Plain: True
+Metadata: {'e44dd04f-9cd0-4e1c-9fa9-0a865d4a0cac': {'source': 'https://www.hvtdpstainz.at/#/contact'}}
+Retriever Res: Query: query
+Metrics: {'mrr': 0.0, 'hit_rate': 0.0}
+
+Query: Wie kann ich den HV TDP kontaktieren?
+Response: You can contact HV TDP Stainz by sending a message through the contact form on their website.
+Faithful: True, score: 1.0
+Relevant: True, score: 1.0
+___________________________
+Plain: True
+Metadata: {'c60972b2-da10-4e06-91bb-3726eb480cbe': {'source': 'https://www.hvtdpstainz.at/api/getItems.php', 'endpoint_description': 'Das Sortiment aus dem Fanshop des HV TDP Stainz', 'record_count': 22, 'important': True}}
+Retriever Res: Query: query
+Metrics: {'mrr': 0.0, 'hit_rate': 0.0}
+
+Query: Stell mir eine Kollektion aus dem Fanshop des HV TDP für maximal € 100.- zusammen
+Response: Eine Kollektion aus dem Fanshop des HV TDP Stainz für maximal € 100.- könnte bestehen aus der "MNS-Maske" für € 7,50, dem "Winterhaube Herren" für € 11,90 und dem "Shirt grau" für € 20,00. Dies würde insgesamt € 39,40 kosten und somit innerhalb des Budgets von € 100.- bleiben.
+Faithful: True, score: 1.0
+Relevant: True, score: 1.0
+___________________________
+Plain: True
+Metadata: {'4d954c3f-f671-4ff5-a18f-00e8d8ca6b22': {'source': 'https://www.hvtdpstainz.at/api/getStandings.php', 'endpoint_description': 'Die Platzierungen bzw. Tabelle aller Mannschaften mit Anzahl der Siege, Niederlagen, Unentschieden, Punkte, Anzahl der Spiele und der Tordifferenz pro Saison.', 'record_count': 28, 'important': True}}
+Retriever Res: Query: query
+Metrics: {'mrr': 0.0, 'hit_rate': 0.0}
+
+Query: Gib mir die aktuelle Tabelle inkl. Anzahl der Siege, Niederlagen, Unentschieden, Punkte und Tordifferenz.
+Response: GH Prettenthaler: Siege 5, Niederlagen 6, Unentschieden 1, Punkte 16, Tordifferenz 31:25
+STT Multitask: Siege 2, Niederlagen 6, Unentschieden 4, Punkte 10, Tordifferenz 24:31
+SV Geistthal: Siege 4, Niederlagen 7, Unentschieden 4, Punkte 16, Tordifferenz 23:38
+Faithful: True, score: 1.0
+Relevant: False, score: 0.0
+___________________________
