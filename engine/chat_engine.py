@@ -1,4 +1,5 @@
 from config import TOKEN_LIMIT
+from engine.postprocessor import BoostImportant
 from llama_index.core import VectorStoreIndex, get_response_synthesizer
 from llama_index.core.chat_engine import CondenseQuestionChatEngine
 from llama_index.core.indices.vector_store import VectorIndexRetriever
@@ -8,7 +9,6 @@ from llama_index.core.query_engine import RetrieverQueryEngine
 from llama_index.core.response_synthesizers import ResponseMode
 from llama_index.core.retrievers import AutoMergingRetriever
 from llama_index.core.vector_stores.types import VectorStoreQueryMode
-from postprocessor import BoostImportant
 
 def build_chat_engine(
         index: VectorStoreIndex,
