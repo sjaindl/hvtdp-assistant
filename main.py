@@ -7,7 +7,6 @@ import sys
 from config import QDRANT_API_KEY, OPENAI_API_KEY, USE_TOOL_ENGINE, QDRANT_URL
 from engine.chat_engine import build_chat_engine
 from engine.tooling_engine import wrap_rag_as_tool, build_router_chat_with_tools
-from eval.llama_eval import eval_faithfulness
 from indexing.index_builder import build_index
 from indexing.index_loader import load_index
 from ingest.ingest_base import ingest_all
@@ -19,8 +18,6 @@ from qdrant_client import QdrantClient
 
 logging.basicConfig(stream = sys.stdout, level = logging.DEBUG)
 logging.getLogger().addHandler(logging.StreamHandler(stream = sys.stdout))
-
-eval_mode = False
 
 if __name__ == "__main__":
     Settings.embed_model = HuggingFaceEmbedding(
@@ -44,22 +41,18 @@ if __name__ == "__main__":
         api_key = QDRANT_API_KEY,
     )
 
-    if eval_mode:
-        engine = build_chat_engine(index)
-        eval_faithfulness(index)
+    print("Chatbot ready. Ask your question:")
+
+    if USE_TOOL_ENGINE:
+        rag_tool = wrap_rag_as_tool(index)
+        engine, tools = build_router_chat_with_tools(extra_tools=[rag_tool])
     else:
-        print("Chatbot ready. Ask your question:")
+        engine = build_chat_engine(index)
 
-        if USE_TOOL_ENGINE:
-            rag_tool = wrap_rag_as_tool(index)
-            engine, tools = build_router_chat_with_tools(extra_tools=[rag_tool])
-        else:
-            engine = build_chat_engine(index)
+    while True:
+        query = input("\nYou: ")
+        if query.lower() in {"exit", "quit"}:
+            break
 
-        while True:
-            query = input("\nYou: ")
-            if query.lower() in {"exit", "quit"}:
-                break
-
-            response = engine.chat(query)
-            print("\nHV TDP Assistant:", response)
+        response = engine.chat(query)
+        print("\nHV TDP Assistant:", response)
